@@ -1,0 +1,127 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Category;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
+class DummyCategorySeeder extends Seeder
+{
+    public function run(): void
+    {
+        $categories = [
+            ['name' => 'Phones & Electronics', 'description' => 'Smartphones, tablets, laptops, accessories'],
+            ['name' => 'Textiles & Fabrics', 'description' => 'Ankara, lace, cotton and synthetic fabrics'],
+            ['name' => 'Cosmetics', 'description' => 'Skincare, makeup, hair products'],
+            ['name' => 'Machine Parts', 'description' => 'Industrial and automotive spare parts'],
+            ['name' => 'Footwear', 'description' => 'Shoes, sandals, sneakers'],
+            ['name' => 'Home Appliances', 'description' => 'Kitchen gadgets, refrigerators, blenders'],
+            ['name' => 'Building Materials', 'description' => 'Cement, tiles, roofing sheets, iron rods'],
+            ['name' => 'Office Supplies', 'description' => 'Stationery, paper, printers, desk organizers'],
+            ['name' => 'Automotive Accessories', 'description' => 'Car covers, seat covers, GPS trackers'],
+            ['name' => 'Agricultural Equipment', 'description' => 'Planters, irrigation kits, harvesters'],
+            ['name' => 'Medical Supplies', 'description' => 'First aid, PPE, diagnostic equipment'],
+            ['name' => 'Fitness & Gym', 'description' => 'Dumbbells, yoga mats, resistance bands'],
+            ['name' => 'Furniture', 'description' => 'Chairs, tables, cabinets, office desks'],
+            ['name' => 'Lighting & Electricals', 'description' => 'Bulbs, cables, sockets, solar panels'],
+            ['name' => 'Safety & Security', 'description' => 'CCTV cameras, fire extinguishers, helmets'],
+            ['name' => 'Packaging Materials', 'description' => 'Cartons, nylon bags, bubble wrap, tapes'],
+            ['name' => 'Chemicals & Raw Materials', 'description' => 'Industrial solvents, polymers, resins'],
+            ['name' => 'Food & Beverages', 'description' => 'Grains, oils, canned goods, seasonings'],
+            ['name' => 'Solar & Renewable Energy', 'description' => 'Inverters, batteries, charge controllers'],
+            ['name' => 'Hardware & Tools', 'description' => 'Hand tools, power tools, fasteners, locks'],
+            ['name' => 'Computer Hardware', 'description' => 'CPUs, GPUs, RAM, motherboards, monitors'],
+            ['name' => 'Networking Equipment', 'description' => 'Routers, switches, patch cables, modems'],
+            ['name' => 'Audio & Video Gear', 'description' => 'Microphones, speakers, studio monitors, cables'],
+            ['name' => 'Gaming Consoles & Accessories', 'description' => 'Controllers, headsets, VR gear, discs'],
+            ['name' => 'Smart Home Devices', 'description' => 'Smart bulbs, plugs, thermostats, hubs'],
+            ['name' => 'Wearable Technology', 'description' => 'Smartwatches, fitness trackers, smart rings'],
+            ['name' => 'Camera & Photography', 'description' => 'DSLRs, lenses, tripods, lighting kits'],
+            ['name' => 'Drone & Aerial Equipment', 'description' => 'Quadcopter drones, spare blades, gimbals'],
+            ['name' => 'Print & Publishing', 'description' => 'Books, magazines, journals, custom prints'],
+            ['name' => 'Crafts & DIY Supplies', 'description' => 'Beads, yarns, adhesives, cutting tools'],
+            ['name' => 'Men\'s Clothing', 'description' => 'Shirts, trousers, suits, traditional attire'],
+            ['name' => 'Women\'s Clothing', 'description' => 'Dresses, blouses, skirts, native wear'],
+            ['name' => 'Children\'s Wear', 'description' => 'Baby clothes, school uniforms, shoes'],
+            ['name' => 'Fashion Accessories', 'description' => 'Belts, ties, cufflinks, hats, scarves'],
+            ['name' => 'Jewelry & Watches', 'description' => 'Rings, necklaces, wristwatches, bracelets'],
+            ['name' => 'Luggage & Travel Gear', 'description' => 'Suitcases, travel bags, backpacks, organizers'],
+            ['name' => 'Hair Extensions & Wigs', 'description' => 'Human hair, synthetic wigs, closures'],
+            ['name' => 'Skincare & Body Care', 'description' => 'Lotions, soaps, body washes, oils'],
+            ['name' => 'Fragrances & Perfumes', 'description' => 'Body sprays, designer perfumes, essential oils'],
+            ['name' => 'Oral Care', 'description' => 'Toothpastes, brushes, mouthwashes, floss'],
+            ['name' => 'Heavy Machinery', 'description' => 'Excavators, bulldozers, forklifts, cranes'],
+            ['name' => 'Generator Parts', 'description' => 'Alternators, carburetors, filters, coils'],
+            ['name' => 'Marine Equipment', 'description' => 'Boat engines, life jackets, anchors, compasses'],
+            ['name' => 'Aviation Spares', 'description' => 'Aircraft fasteners, avionics, landing gear parts'],
+            ['name' => 'Railway Supplies', 'description' => 'Tracks, fastening clips, signaling equipment'],
+            ['name' => 'Oil & Gas Equipment', 'description' => 'Valves, pipes, gauges, drill bits'],
+            ['name' => 'Metal Products', 'description' => 'Steel sheets, aluminum profiles, copper wires'],
+            ['name' => 'Plastics & Polymers', 'description' => 'PVC pipes, plastic sheets, molded containers'],
+            ['name' => 'Wood & Timber', 'description' => 'Plywood, planks, MDF boards, veneer'],
+            ['name' => 'Glass & Ceramics', 'description' => 'Window glass, ceramic tiles, sanitary ware'],
+            ['name' => 'Kitchenware & Utensils', 'description' => 'Pots, pans, cutleries, dish racks'],
+            ['name' => 'Bedding & Linens', 'description' => 'Bedsheets, duvet covers, pillows, blankets'],
+            ['name' => 'Bathroom Fixtures', 'description' => 'Showers, sinks, faucets, bathtubs'],
+            ['name' => 'Cleaning Supplies', 'description' => 'Detergents, disinfectants, mops, brushes'],
+            ['name' => 'Gardening Tools', 'description' => 'Lawn mowers, sprinklers, pruning shears, hoses'],
+            ['name' => 'Pet Supplies', 'description' => 'Pet food, cages, leashes, grooming tools'],
+            ['name' => 'Sports Equipment', 'description' => 'Footballs, tennis rackets, basketballs, nets'],
+            ['name' => 'Camping & Hiking', 'description' => 'Tents, sleeping bags, portable stoves, compasses'],
+            ['name' => 'Water Treatment', 'description' => 'Filters, chemicals, UV sterilizers, pumps'],
+            ['name' => 'HVAC Equipment', 'description' => 'Air conditioners, heaters, ventilation ducts, fans'],
+            ['name' => 'Industrial Automation', 'description' => 'PLCs, sensors, actuators, control panels'],
+            ['name' => 'Pumps & Valves', 'description' => 'Water pumps, pneumatic valves, pressure gauges'],
+            ['name' => 'Fasteners & Fixings', 'description' => 'Bolts, nuts, screws, washers, anchors'],
+            ['name' => 'Welding Equipment', 'description' => 'Welding machines, electrodes, helmets, gas cylinders'],
+            ['name' => 'Measuring Instruments', 'description' => 'Multimeters, calipers, scales, laser meters'],
+            ['name' => 'Laboratory Equipment', 'description' => 'Microscopes, test tubes, centrifuges, reagents'],
+            ['name' => 'Educational Supplies', 'description' => 'Globes, whiteboards, charts, science kits'],
+            ['name' => 'Musical Instruments', 'description' => 'Guitars, keyboards, drums, violins'],
+            ['name' => 'Party & Event Supplies', 'description' => 'Balloons, banners, lighting, sound systems'],
+            ['name' => 'Janitorial Equipment', 'description' => 'Floor buffers, industrial vacuums, bins'],
+            ['name' => 'Warehouse Equipment', 'description' => 'Pallet jacks, shelving units, hand trucks'],
+            ['name' => 'Road Safety Gear', 'description' => 'Traffic cones, barricades, reflective vests'],
+            ['name' => 'Firefighting Equipment', 'description' => 'Hose reels, smoke detectors, alarms, blankets'],
+            ['name' => 'Telecommunication Gear', 'description' => 'Fiber optic cables, antennas, signal boosters'],
+            ['name' => 'Renewable Storage', 'description' => 'Lithium-ion packs, deep-cycle batteries, racks'],
+            ['name' => 'Pest Control', 'description' => 'Insecticides, traps, sprayers, repellents'],
+            ['name' => 'Paper Products', 'description' => 'Carton boards, tissue papers, envelopes'],
+            ['name' => 'Rubber Products', 'description' => 'Conveyor belts, seals, hoses, rubber sheets'],
+            ['name' => 'Textile Machinery', 'description' => 'Sewing machines, weaving looms, thread spools'],
+            ['name' => 'Printing Inks & Dyes', 'description' => 'Screen printing inks, textile dyes, toners'],
+            ['name' => 'Livestock Feeds', 'description' => 'Poultry feeds, fish meal, supplements, vitamins'],
+            ['name' => 'Seeds & Seedlings', 'description' => 'Crop seeds, vegetable seeds, fruit seedlings'],
+            ['name' => 'Fertilizers & Pesticides', 'description' => 'NPK fertilizers, urea, herbicides, fungicides'],
+            ['name' => 'Dairy Equipment', 'description' => 'Milking machines, pasteurizers, milk cans'],
+            ['name' => 'Poultry Equipment', 'description' => 'Battery cages, feeders, drinkers, incubators'],
+            ['name' => 'Cold Chain Equipment', 'description' => 'Refrigerated trucks, cold rooms, ice makers'],
+            ['name' => 'Material Handling', 'description' => 'Conveyor systems, hoists, winches, slings'],
+            ['name' => 'Hydraulic Systems', 'description' => 'Hydraulic oil, cylinders, pumps, hoses'],
+            ['name' => 'Pneumatic Systems', 'description' => 'Air compressors, pneumatic cylinders, air lines'],
+            ['name' => 'Transmission Parts', 'description' => 'Gearboxes, belts, chains, pulleys, bearings'],
+            ['name' => 'Brake Systems', 'description' => 'Brake pads, discs, calipers, fluid lines'],
+            ['name' => 'Suspension Parts', 'description' => 'Shock absorbers, struts, control arms, springs'],
+            ['name' => 'Exhaust Systems', 'description' => 'Mufflers, catalytic converters, pipes, gaskets'],
+            ['name' => 'Cooling Systems', 'description' => 'Radiators, water pumps, thermostats, fans'],
+            ['name' => 'Fuel Systems', 'description' => 'Fuel pumps, injectors, filters, tanks'],
+            ['name' => 'Ignition Systems', 'description' => 'Spark plugs, ignition coils, distributors'],
+            ['name' => 'Steering Components', 'description' => 'Steering racks, tie rods, power steering pumps'],
+            ['name' => 'Wheels & Tyres', 'description' => 'Alloy wheels, truck tyres, inner tubes, valves'],
+            ['name' => 'Car Audio & Video', 'description' => 'Head units, amplifiers, subwoofers, speakers'],
+            ['name' => 'Diagnostic Tools', 'description' => 'OBD scanners, code readers, multimeters']
+        ];
+
+        foreach ($categories as $category) {
+            Category::updateOrCreate(
+                ['slug' => Str::slug($category['name'])],
+                [
+                    'name' => $category['name'],
+                    'slug' => Str::slug($category['name']),
+                    'description' => $category['description'],
+                ]
+            );
+        }
+    }
+}

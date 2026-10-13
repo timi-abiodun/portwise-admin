@@ -29,5 +29,9 @@ class DatabaseSeeder extends Seeder
                 'password' => env('ADMIN_PASSWORD'),
             ]
         );
+
+        $this->call([
+            CategorySeeder::class,
+        ]);
     }
 }
