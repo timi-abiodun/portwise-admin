@@ -7,7 +7,9 @@ use App\Http\Controllers\Auth\EmailVerificationPromptController;
 use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DutyRateController;
 use App\Http\Controllers\HsCodeController;
+use App\Http\Controllers\ImportController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -43,4 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('categories', CategoryController::class)->except('show');
 
     Route::resource('hs-codes', HsCodeController::class)->except('show');
+
+    Route::resource('duty-rates', DutyRateController::class)->except('show');
+
+    Route::get('import', [ImportController::class, 'create'])->name('import.create');
+    Route::post('import', [ImportController::class, 'store'])->name('import.store');
+    Route::get('import/template', [ImportController::class, 'template'])->name('import.template');
 });

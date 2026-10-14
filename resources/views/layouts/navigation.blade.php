@@ -21,6 +21,12 @@
                     <x-nav-link :href="route('hs-codes.index')" :active="request()->routeIs('hs-codes.*')">
                         {{ __('HS Codes') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('duty-rates.index')" :active="request()->routeIs('duty-rates.*')">
+                        {{ __('Duty Rates') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('import.create')" :active="request()->routeIs('import.*')">
+                        {{ __('Import') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -81,6 +87,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('hs-codes.index')" :active="request()->routeIs('hs-codes.*')">
                 {{ __('HS Codes') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('duty-rates.index')" :active="request()->routeIs('duty-rates.*')">
+                {{ __('Duty Rates') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('import.create')" :active="request()->routeIs('import.*')">
+                {{ __('Import') }}
             </x-responsive-nav-link>
         </div>
 
