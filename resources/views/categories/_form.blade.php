@@ -21,6 +21,18 @@
     <x-input-error :messages="$errors->get('description')" class="mt-2" />
 </div>
 
+<label class="mt-4 flex items-center gap-2">
+    <input type="checkbox" name="needs_weight" value="1"
+        @checked(old('needs_weight', $category?->needs_weight))>
+    Needs weight (per-kg duty)
+</label>
+
+<label class="mt-2 flex items-center gap-2">
+    <input type="checkbox" name="is_active" value="1"
+        @checked(old('is_active', $category?->is_active ?? true))>
+    Active
+</label>
+
 <div class="mt-6 flex items-center gap-3">
     <x-primary-button>Save</x-primary-button>
     <a href="{{ route('categories.index') }}" class="text-sm text-gray-600 hover:underline">Cancel</a>

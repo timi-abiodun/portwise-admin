@@ -26,6 +26,7 @@
                         <tr>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
                             <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Slug</th>
+                            <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
                             <th class="px-4 py-3"></th>
                         </tr>
                     </thead>
@@ -34,19 +35,20 @@
                             <tr>
                                 <td class="px-4 py-3">{{ $category->name }}</td>
                                 <td class="px-4 py-3 text-gray-500">{{ $category->slug }}</td>
+                                <td class="px-4 py-3">{{ $category->is_active ? 'Active' : 'Inactive' }}</td>
                                 <td class="px-4 py-3 text-right whitespace-nowrap">
                                     <a href="{{ route('categories.edit', $category) }}"
                                        class="text-indigo-600 hover:underline mr-3">Edit</a>
                                     <form method="POST" action="{{ route('categories.destroy', $category) }}"
-                                          class="inline" onsubmit="return confirm('Delete this category?')">
+                                          class="inline" onsubmit="return confirm('Deactivate this category?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="text-red-600 hover:underline">Delete</button>
+                                        <button class="text-red-600 hover:underline">Deactivate</button>
                                     </form>
                                 </td>
                             </tr>
                         @empty
-                            <tr><td colspan="3" class="px-4 py-6 text-center text-gray-500">No categories found.</td></tr>
+                            <tr><td colspan="4" class="px-4 py-6 text-center text-gray-500">No categories found.</td></tr>
                         @endforelse
                     </tbody>
                 </table>
