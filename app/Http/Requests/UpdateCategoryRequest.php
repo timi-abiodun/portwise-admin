@@ -32,6 +32,16 @@ class UpdateCategoryRequest extends FormRequest
                 Rule::unique('categories', 'slug')->ignore($this->category),
             ],
             'description' => ['nullable', 'string'],
+            'needs_weight' => ['boolean'],
+            'is_active' => ['boolean'],
         ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'needs_weight' => $this->boolean('needs_weight'),
+            'is_active' => $this->boolean('is_active'),
+        ]);
     }
 }
