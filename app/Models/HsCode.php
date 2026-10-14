@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class HsCode extends Model
 {
@@ -14,5 +15,10 @@ class HsCode extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function dutyRates(): HasMany
+    {
+        return $this->hasMany(DutyRate::class);
     }
 }
